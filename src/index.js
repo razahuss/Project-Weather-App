@@ -1,14 +1,5 @@
 
 
-//---------------------weather.js---------------------------------
-//need a function that uses fetch to get the info from the api
-//function would be async and use await for each call
-//inside the function, set all the info to a new object and return the object
-//this function can be exported.
-//this function should have a parameter which is the search which will be used
-//as a parameter for the api call.
-//-----------------------------------------------------------------
-
 //---------------------index.js-------------------------------------
 //import the function from weather.js
 //get the searches value when the search button is clicked and store it in a variable
@@ -23,4 +14,17 @@
 
 //--------------------html file---------------------------------------
 //should have a header which has the icon/title, search bar with button, and the ability to change C and F.
-//have a container for current weather and container for next 3 day forcast.
+
+import { displayWeather } from "./display";
+
+const searchbtn = document.querySelector('.search-btn');
+const container = document.querySelector('.container');
+const input = document.getElementById('searchIn');
+const celciusbtn = document.querySelector('.celcius-btn');
+const farenheitbtn = document.querySelector('.farenheit-btn');
+
+displayWeather(container, 'new york', 'f');
+
+searchbtn.addEventListener('click', (event)=>{displayWeather(container, input.value, 'f');event.preventDefault();});
+celciusbtn.addEventListener('click', (event)=>{displayWeather(container, input.value, 'c');event.preventDefault();});
+farenheitbtn.addEventListener('click', (event)=>{displayWeather(container, input.value, 'f');event.preventDefault();});
