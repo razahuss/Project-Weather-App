@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600;1,400&display=swap');
 
-body{
+html, body{
     margin: 0;
+    height: 100%;
     font-family: 'Nunito', sans-serif;
-    
+    color: white;
 }
 
 .header{
@@ -14,6 +15,42 @@ body{
     margin-right: 3vh;
     margin-left: 2vh;
     font-size: 5vh;
+}
+
+#searchIn{
+    border-radius: 1vh;
+    border-width: 1px;
+    border-style: solid;
+    width: 40vh;
+    height: 3vh;
+    border-color: rgb(200, 201, 202);
+}
+
+.search-btn{
+    border-radius: 1vh;
+    border-style: solid;
+    border-width: 1px;
+    width: 10vh;
+    height: 4vh;
+    cursor: pointer;
+}
+
+.celcius-btn{
+    border-radius: 2vh;
+    border-style: solid;
+    border-width: 1px;
+    width: 10vh;
+    height: 4vh;
+    cursor: pointer;
+}
+
+.farenheit-btn{
+    border-radius: 2vh;
+    border-style: solid;
+    border-width: 1px;
+    width: 10vh;
+    height: 4vh;
+    cursor: pointer;
 }
 
 .place{
@@ -28,6 +65,7 @@ body{
     justify-content: center;
     font-size: 2.5vh;
     margin-top: 1vh;
+    opacity: 0.7;
 }
 
 .leftContain{
@@ -70,6 +108,7 @@ body{
 
 .rightContain .details .desTitle{
     font-size: 2.5vh;
+    opacity: 0.7;
 }
 
 .details p{
@@ -79,5 +118,6 @@ body{
 
 .bottomFeelsLike{
     font-size: 2.5vh;
+    opacity: 0.7;
 }
 
