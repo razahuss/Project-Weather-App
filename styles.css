@@ -109,7 +109,7 @@ html, body{
 .rightContain{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(40vh, 50vh));
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     margin-top: 10vh;
     margin-left: 5vh;
