@@ -26,5 +26,21 @@ const farenheitbtn = document.querySelector('.farenheit-btn');
 displayWeather(container, 'new york', 'f');
 
 searchbtn.addEventListener('click', (event)=>{displayWeather(container, input.value, 'f');event.preventDefault();});
-celciusbtn.addEventListener('click', (event)=>{displayWeather(container, input.value, 'c');event.preventDefault();});
-farenheitbtn.addEventListener('click', (event)=>{displayWeather(container, input.value, 'f');event.preventDefault();});
+celciusbtn.addEventListener('click', (event)=>{
+    if(input.value == ''){
+        displayWeather(container, 'new york', 'c');
+    }
+    else{
+        displayWeather(container, input.value, 'c');
+    }
+    event.preventDefault();
+});
+farenheitbtn.addEventListener('click', (event)=>{
+    if(input.value == ''){
+        displayWeather(container, 'new york', 'f');
+    }
+    else{
+        displayWeather(container, input.value, 'f');
+    }
+    event.preventDefault();
+});

@@ -10,18 +10,10 @@
 const getdata = async (search) => {
     const APIKEY = '5824f18f1dc84e2bb81181249232007';
     try {
-        const data = await fetch('http://api.weatherapi.com/v1/forecast.json?key='+APIKEY+'&q='+search+'&days=1&aqi=no&alerts=no', {mode: 'cors'});
+        const data = await fetch('https://api.weatherapi.com/v1/forecast.json?key='+APIKEY+'&q='+search+'&days=1&aqi=no&alerts=no', {mode: 'cors'});
 
-        const response = await data.json();
+        const response = await data.json();  
 
-        //console.log(response);  
-        /**
-         * IMPORTANT: USE data.status TO GET THE ERROR RESPONSE CODE
-         * FOR WHETHER THE SEARCH WAS VALID OR NOT THEN PUT THE BELOW IN A IF
-         * STATEMENT AND IF THE RESPONSE CODE WAS 400,401,403,ETC.. THEN RETURN
-         * A NULL OBJECT INSTEAD, INSIDE THE DISPLAYWEATHER FUNCTION, THE OBJECT
-         * CAN BE CHECKED IF IT WAS NULL OR NOT.
-         */
         const name = response.location.name;
         const country = response.location.country;
         const time = response.location.localtime;

@@ -1,8 +1,10 @@
 import { getdata } from "./weather";
 
 const displayWeather = async (container, search, degree) => {
+
     const currentWeather = await getdata(search);
     container.innerHTML = '';
+
     //--------------name and country-----------------------
     const place = document.createElement('div');
     place.classList.add('place');
@@ -15,6 +17,19 @@ const displayWeather = async (container, search, degree) => {
     datePlace.classList.add('datePlace');
     const date =  new Date(currentWeather.time);
     datePlace.innerHTML = date.toDateString() + ' | ' + date.toLocaleTimeString();
+    const body = document.querySelector('body');
+    if((date.getHours()>=0&&date.getHours()<=4)||(date.getHours()>=20&&date.getHours()<=23)){
+        body.style.backgroundImage = 'linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%)';
+    }
+    else if(date.getHours()>=5&&date.getHours()<=7){
+        body.style.backgroundImage = 'linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113))';
+    }
+    else if(date.getHours()>=8&&date.getHours()<=17){
+        body.style.backgroundImage = 'linear-gradient(179.2deg, rgb(21, 21, 212) 0.9%, rgb(53, 220, 243) 95.5%)';
+    }
+    else {
+        body.style.backgroundImage = 'linear-gradient(179.2deg, rgb(34, 34, 34) 0%, rgb(8, 0, 153) 29.7%, rgb(118, 6, 166) 63.4%, rgba(233, 0, 64, 0.58) 100.1%)';
+    }
     container.appendChild(datePlace);
     //------------------------------------------------------------
 
@@ -98,7 +113,7 @@ const displayWeather = async (container, search, degree) => {
     visP.innerHTML = 'Visibility';
     visDiv.appendChild(visP);
     const visDtaP = document.createElement('p');
-    visDtaP.innerHTML = (degree==='c'?currentWeather.visibilityKm+'km':currentWeather.visibilityMiles+' miles')
+    visDtaP.innerHTML = (degree==='c'?currentWeather.visibilityKm+'km':currentWeather.visibilityMiles+' mile')
     visDiv.appendChild(visDtaP);
     //-----------------------------------------------------------------------------------
 
