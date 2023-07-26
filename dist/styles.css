@@ -24,6 +24,8 @@ html, body{
     width: 40vh;
     height: 3vh;
     border-color: rgb(200, 201, 202);
+    opacity: 0.6;
+    background-color: white;
 }
 
 .search-btn{
@@ -33,6 +35,12 @@ html, body{
     width: 10vh;
     height: 4vh;
     cursor: pointer;
+    opacity: 0.7;
+    background-color: rgb(190, 190, 190);
+}
+
+.search-btn:hover{
+    background-color: rgb(250, 251, 252);
 }
 
 .celcius-btn{
@@ -42,6 +50,12 @@ html, body{
     width: 10vh;
     height: 4vh;
     cursor: pointer;
+    opacity: 0.7;
+    background-color: rgb(190, 190, 190);
+}
+
+.celcius-btn:hover{
+    background-color: rgb(250, 251, 252);
 }
 
 .farenheit-btn{
@@ -51,6 +65,12 @@ html, body{
     width: 10vh;
     height: 4vh;
     cursor: pointer;
+    opacity: 0.7;
+    background-color: rgb(190, 190, 190);
+}
+
+.farenheit-btn:hover{
+    background-color: rgb(250, 251, 252);
 }
 
 .place{
